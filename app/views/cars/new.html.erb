@@ -1,0 +1,9 @@
+<%= simple_form_for @car do |f| %>
+  <%= f.input :brand, placeholder: 'car brand', error: 'Brand is mandatory, please specify one' %>
+  <%= f.input :model, placeholder: 'car model', error: 'Model is mandatory, please specify one' %>
+  <%= f.input :fuel, placeholder: 'fuel type', error: 'Fuel is mandatory, please specify one' %>
+  <%= f.input :gearbox, placeholder: 'gearbox type', error: 'Gearbox type is mandatory, please specify one' %>
+  <%= f.input :price, placeholder: 'price per day', error: 'Price is mandatory, please specify one' %>
+  <%= f.input :photo_url, placeholder: 'car photo', error: 'A photo is mandatory, please upload one' %>
+  <%= f.button :submit %>
+<% end %>
