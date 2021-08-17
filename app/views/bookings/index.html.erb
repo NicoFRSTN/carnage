@@ -1,1 +1,12 @@
 <h1>hello index</h1>
+
+<%= @bookings.each do |b| %>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> <% b.car.brand %></h5>
+    <p class="card-text"><%= b.car.model %><%= b.car.price %></p>
+    <%= link_to "Check car", booking_path(:id => b.id) %>
+  </div>
+</div>
+<%end%>
