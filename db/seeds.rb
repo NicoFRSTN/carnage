@@ -16,6 +16,7 @@ user = User.create!(
   password: "adminadmin"
 )
 
+Car.destroy_all
 20.times do
   Car.create!(
     brand: Faker::Vehicle.make,
