@@ -2,7 +2,7 @@
 
 <%= @bookings.each do |b| %>
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="<%= b.car.photo_url %>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"> <% b.car.brand %></h5>
     <p class="card-text"><%= b.car.model %><%= b.car.price %></p>
