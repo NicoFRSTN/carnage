@@ -8,6 +8,21 @@
 
 require 'faker'
 
+Car.destroy_all
+User.destroy_all
+
+user = User.create!(
+  email: "admin@hotmail.com",
+  password: "adminadmin"
+)
+
 20.times do
-  Car.create!(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, fuel: Faker::Vehicle.fuel_type, gearbox: Faker::Vehicle.transmission, price: Faker::Commerce.price, owner: User.last)
+  Car.create!(
+    brand: Faker::Vehicle.make,
+    model: Faker::Vehicle.model,
+    fuel: Faker::Vehicle.fuel_type,
+    gearbox: Faker::Vehicle.transmission,
+    price: Faker::Commerce.price,
+    owner: user
+  )
 end
