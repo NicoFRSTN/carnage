@@ -1,8 +1,11 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Hello</h1>
 
 <div class="container">
   <div class="grid-container">
-    <%= @cars.each do |car| %>
+    <% @cars.each do |car| %>
+
       <div class="car-card">
         <div class="car-card-photo">
           <img src=<%= car.photo_url %> class="card-img-top" alt="...">
@@ -27,3 +30,8 @@
     <%end%>
   </div>
 </div>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
