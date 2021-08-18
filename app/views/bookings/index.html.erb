@@ -1,12 +1,20 @@
-<h1>hello index</h1>
 
-<%= @bookings.each do |b| %>
-<div class="card" style="width: 18rem;">
-  <img src="<%= b.car.photo_url %>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> <% b.car.brand %></h5>
-    <p class="card-text"><%= b.car.model %><%= b.car.price %></p>
-    <%= link_to "Check car", booking_path(:id => b.id) %>
+<h1 class="text-center">My Bookings</h1>
+<div class="container">
+<% @bookings.each do |booking| %>
+  <div class="card m-1" style="width: 20rem;">
+  <img src="<%= booking.car.photo_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title text-uppercase fw-bold"><%= booking.car.brand %></h5>
+      <h5 class="card-title text-uppercase fw-bold"><%= booking.car.model %></h5>
+    </div>
+      <hr>
+      <p class="card-title text-center"><%= booking.date_start %></p>
+      <p class="card-title text-center"><%= booking.date_end %></p>
+
+    </div>
+    <%= link_to "Check this car", booking_path(:id => booking.id), :class => "btn btn-secondary" %>
   </div>
-</div>
 <%end%>
+</div>
