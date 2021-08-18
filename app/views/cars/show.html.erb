@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <%= @car.brand %> <%= @car.model %>
+  </div>
+
+  <div>
+    <%= @car.fuel %>
+  </div>
+
+   <div>
+    <%= @car.gearbox %>
+  </div>
+
+  <div>
+    <img src="<%= @car.photo_url %>" alt="">
+  </div>
+
+  <div>
+    <h2><%= @car.price %> €</h2>
+  </div>
+</div>
+
+<div>
+<%= simple_form_for [@car, @booking] do |f| %>
+  <%= f.input :date_start, as: :date, error: 'Rental start date is mandatory, please specify one' %>
+  <%= f.input :date_end, as: :date, error: 'Rental end date is mandatory, please specify one' %>
+  <%= f.button :submit %>
+<% end %>
+</div>

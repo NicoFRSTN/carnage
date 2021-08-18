@@ -1,0 +1,12 @@
+<div><%= @booking.car.brand  %>
+<%= @booking.car.model  %></div>
+
+<div><img src= <%= @booking.car.photo_url%> alt=""></div>
+
+<div>
+<p>Rental from: <%= @booking.date_start  %> to: <%= @booking.date_end  %>.<br>
+Days rented: <%= ((@booking.date_end) - (@booking.date_start) + 1).to_i %> days. <br>
+Total rental price: <%= ((@booking.date_end) - (@booking.date_start) + 1) * (@booking.car.price) %> €.</p>
+</div>
+
+<%= link_to "Go back to my bookings", bookings_path %>

@@ -28,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:date_start, :date_end)
+    params.require(:booking).permit(:date_start, :date_end)
   end
 end
