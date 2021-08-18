@@ -16,9 +16,9 @@ user = User.create!(
   password: "adminadmin"
 )
 
-Car.destroy_all
 20.times do
   Car.create!(
+    photo_url: Faker::LoremFlickr.image(search_terms: ['supercar']),
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
     fuel: Faker::Vehicle.fuel_type,
