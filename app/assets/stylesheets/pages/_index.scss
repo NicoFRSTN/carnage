@@ -1,3 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "car-container";
+
+.searchbar{
+  justify-content: space-between;
+}
