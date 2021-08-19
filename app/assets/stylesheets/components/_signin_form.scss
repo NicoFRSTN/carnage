@@ -1,0 +1,32 @@
+.container {
+  width: 660px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.signup-content {
+    background: #fff;
+    padding: 50px 85px;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 17px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: linear-gradient(to left, #74ebd5, #9face6);
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+}
