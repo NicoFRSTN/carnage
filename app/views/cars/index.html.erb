@@ -1,12 +1,42 @@
-<h1>Hello</h1>
+<h1 class="text-center">Search you brand car's</h1>
 
-<%= @cars.each do |car| %>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> <% car.brand %></h5>
-    <p class="card-text"><%= car.model %><%= car.price %></p>
-    <%= link_to "Check car", car_path(:id => car.id) %>
+<div class="container">
+
+  <%= simple_form_for :search, method: :get,
+                                html: { class: 'd-flex my-3' } do |f| %>
+    <%= f.input :query, placeholder: "Find a car...",
+                        label: false,
+                        input_html: { name: :query,
+                                      value: params.dig(:query) } %>
+    <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
+                       selected: params.dig(:fuel),
+                       include_blank: true,
+                       label: false,
+                       input_html: { name: :fuel } %>
+    <div class="ml-3">
+      <%= f.submit "Search", class: "btn btn-primary"  %>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="movies">
+        <% @cars.each do |car| %>
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> <%= car.brand %></h5>
+              <p class="card-text"><%= car.model %></p>
+              <p class="card-text"><%= car.price %>€ / day</p>
+              <p class="card-text"><%= car.fuel %></p>
+
+              <%= link_to "Check car", car_path(:id => car.id) %>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
   </div>
 </div>
-<%end%>

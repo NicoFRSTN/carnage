@@ -21,7 +21,7 @@ Car.destroy_all
   Car.create!(
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
-    fuel: Faker::Vehicle.fuel_type,
+    fuel: Car::AUTHORIZED_FUELS.sample,
     gearbox: Faker::Vehicle.transmission,
     price: Faker::Commerce.price,
     owner: user
