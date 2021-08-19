@@ -5,6 +5,8 @@ class Car < ApplicationRecord
                   "30€-40€", "40€-50€", "50€-60€",
                   "60€-70€", "70€-80€", "80€-90€",
                   "90€-100€"]
+  AUTHORIZED_ADDRESS = ["Paris", "Lyon", "Grenoble", "Marseille", "Bordeaux", "Saint-Étienne", "Nice"]
+
   belongs_to :owner, class_name: 'User'
   has_many :bookings, dependent: :destroy
   validates :fuel, inclusion: { in: AUTHORIZED_FUELS }

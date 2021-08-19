@@ -21,6 +21,10 @@ class CarsController < ApplicationController
       @cars = @cars.where("price > #{prices.first.to_f} AND price < #{prices.last.to_f}")
     end
 
+    if params[:address].present?
+      @cars = @cars.where(address: params[:address])
+    end
+
 
     @markers = @cars.geocoded.map do |car|
       {
