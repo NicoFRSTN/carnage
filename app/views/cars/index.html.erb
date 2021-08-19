@@ -21,6 +21,12 @@
                        label: false,
                        input_html: { name: :fuel } %>
 
+    <%= f.input :price, collection: Car::RANGE_PRICES,
+                      selected: params.dig(:price),
+                      include_blank: "- Select price -",
+                      label: false,
+                      input_html: { name: :price } %>
+
 
     <div class="ml-3">
       <%= f.submit "Search", class: "btn btn-primary"  %>
