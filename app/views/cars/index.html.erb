@@ -1,9 +1,8 @@
 <h1 class="text-center">Search you brand car's</h1>
 
-<div class="container">
-
+<div class='searchbar .mx-auto w-75'>
   <%= simple_form_for :search, method: :get,
-                                html: { class: 'd-flex my-3' } do |f| %>
+                                html: { class: 'd-flex my-3 ' } do |f| %>
     <%= f.input :query, placeholder: "Find a car...",
                         label: false,
                         input_html: { name: :query,
@@ -29,10 +28,12 @@
 
 
     <div class="ml-3">
-      <%= f.submit "Search", class: "btn btn-primary"  %>
+      <%= f.submit "Search", class: "btn btn-dark"  %>
     </div>
   <% end %>
 </div>
+
+
 
 <div class="container">
   <div class="grid-container">
