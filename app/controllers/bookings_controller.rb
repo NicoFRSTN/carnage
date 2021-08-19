@@ -15,6 +15,13 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
+      @bookings       = @car.bookings
+      @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.date_start,
+        to:   booking.date_end
+      }
+      end
       render 'cars/show'
     end
   end
