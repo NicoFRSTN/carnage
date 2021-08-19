@@ -1,9 +1,16 @@
 class CarsController < ApplicationController
 
   def index
-    @cars = Car.all
-
-       @markers = @cars.geocoded.map do |car|
+    if params[:query].present?
+      sql_query = "brand ILIKE :query OR model ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cars = Car.all
+    end
+    if params[:fuel].present?
+      @cars = @cars.where(fuel: params[:fuel])
+    end
+    @markers = @cars.geocoded.map do |car|
       {
         lat: car.latitude,
         lng: car.longitude,

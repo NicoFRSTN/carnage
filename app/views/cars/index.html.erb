@@ -1,6 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center">Search you brand car's</h1>
 
-<h1>Hello</h1>
+<div class="container">
+
+  <%= simple_form_for :search, method: :get,
+                                html: { class: 'd-flex my-3' } do |f| %>
+    <%= f.input :query, placeholder: "Find a car...",
+                        label: false,
+                        input_html: { name: :query,
+                                      value: params.dig(:query) } %>
+    <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
+                       selected: params.dig(:fuel),
+                       include_blank: true,
+                       label: false,
+                       input_html: { name: :fuel } %>
+    <div class="ml-3">
+      <%= f.submit "Search", class: "btn btn-primary"  %>
+    </div>
+  <% end %>
+</div>
 
 <div class="container">
   <div class="grid-container">
