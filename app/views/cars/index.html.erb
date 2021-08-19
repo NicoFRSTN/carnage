@@ -8,6 +8,7 @@
                         input_html: { name: :query,
                                       value: params.dig(:query) } %>
 
+
     <%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
                        selected: params.dig(:gearbox),
                        include_blank: "- Select Gearbox -",
@@ -26,6 +27,11 @@
                       label: false,
                       input_html: { name: :price } %>
 
+    <%= f.input :address, collection: Car::AUTHORIZED_ADDRESS,
+                      selected: params.dig(:address),
+                      include_blank: "- Select address -",
+                      label: false,
+                      input_html: { name: :address } %>
 
     <div class="ml-3">
       <%= f.submit "Search", class: "btn btn-dark"  %>
