@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+
   def index
     if params[:query].present?
       sql_query = "brand ILIKE :query OR model ILIKE :query"
@@ -18,6 +19,7 @@ class CarsController < ApplicationController
       }
     end
   end
+
 
   def show
     @car = Car.find(params[:id])
