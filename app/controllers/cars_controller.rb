@@ -7,9 +7,15 @@ class CarsController < ApplicationController
     else
       @cars = Car.all
     end
+
     if params[:fuel].present?
       @cars = @cars.where(fuel: params[:fuel])
     end
+
+     if params[:gearbox].present?
+      @cars = @cars.where(gearbox: params[:gearbox])
+    end
+
     @markers = @cars.geocoded.map do |car|
       {
         lat: car.latitude,
