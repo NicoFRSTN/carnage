@@ -8,11 +8,19 @@
                         label: false,
                         input_html: { name: :query,
                                       value: params.dig(:query) } %>
+
     <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
                        selected: params.dig(:fuel),
-                       include_blank: true,
+                       include_blank: "- select fuel -",
                        label: false,
                        input_html: { name: :fuel } %>
+
+    <%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
+                       selected: params.dig(:gearbox),
+                       include_blank: true,
+                       label: false,
+                       input_html: { name: :gearbox } %>
+
     <div class="ml-3">
       <%= f.submit "Search", class: "btn btn-primary"  %>
     </div>
