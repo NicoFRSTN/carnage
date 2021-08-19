@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
-
   def index
+    @cars = Car.all
     if params[:query].present?
       sql_query = "brand ILIKE :query OR model ILIKE :query"
       @cars = Car.where(sql_query, query: "%#{params[:query]}%")
@@ -26,10 +26,23 @@ class CarsController < ApplicationController
     end
   end
 
-
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @car.latitude,
+      lng: @car.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { car: @car }),
+      image_url: helpers.asset_url('car.png')
+    }]
+
+    @bookings       = @car.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.date_start,
+        to:   booking.date_end
+      }
+    end
   end
 
   def new
