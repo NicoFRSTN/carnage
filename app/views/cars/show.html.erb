@@ -1,23 +1,29 @@
-<div>
+
+<div class="car-container">
   <div>
     <%= @car.brand %> <%= @car.model %>
-  </div>
 
-  <div>
+
+
     <%= @car.fuel %>
-  </div>
 
-  <div>
+
+
     <%= @car.gearbox %>
-  </div>
 
-  <div>
+
     <img src="<%= @car.photo_url %>" width= 600px alt="">
   </div>
 
-  <div>
-    <h2><%= @car.price %> €</h2>
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+</div>
+
+<div>
+    <h2><%= @car.price %> €</h2>
 </div>
 
 <div>
