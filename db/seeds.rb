@@ -11,19 +11,25 @@ require 'faker'
 Car.destroy_all
 User.destroy_all
 
+ADRESSES = [
+  '20 rue des capucins,  Lyon',
+  '48 rue de la madeleine, Lyon'
+]
+
 user = User.create!(
   email: "admin@hotmail.com",
   password: "adminadmin"
 )
 
-Car.destroy_all
 20.times do
   Car.create!(
+    photo_url: Faker::LoremFlickr.image(search_terms: ['supercar']),
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
     fuel: Car::AUTHORIZED_FUELS.sample,
     gearbox: Faker::Vehicle.transmission,
     price: Faker::Commerce.price,
+    address: ADRESSES.sample,
     owner: user
   )
 end
