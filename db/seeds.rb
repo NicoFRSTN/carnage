@@ -26,7 +26,7 @@ user = User.create!(
     photo_url: Faker::LoremFlickr.image(search_terms: ['supercar']),
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
-    fuel: Faker::Vehicle.fuel_type,
+    fuel: Car::AUTHORIZED_FUELS.sample,
     gearbox: Faker::Vehicle.transmission,
     price: Faker::Commerce.price,
     address: ADRESSES.sample,

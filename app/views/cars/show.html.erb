@@ -1,35 +1,47 @@
-
 <div class="car-container">
-  <div>
-    <%= @car.brand %> <%= @car.model %>
-
-
-
-    <%= @car.fuel %>
-
-
-
-    <%= @car.gearbox %>
-
-
-    <img src="<%= @car.photo_url %>" width= 600px alt="">
-  </div>
-
   <div id="map"
     style="width: 100%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
+<!-- separation  -->
+
+  <div>
+
+    <div>
+      <img src="<%= @car.photo_url %>" width= 600px alt="">
+    </div>
+
+    <div>
+      <%= @car.brand %> <%= @car.model %>
+    </div>
+
+    <div>
+      <%= @car.fuel %>
+    </div>
+
+    <div>
+      <%= @car.gearbox %>
+    </div>
+
+    <div>
+      <h2><%= @car.price %> € / Day</h2>
+    </div>
+
+    <div>
+
+      <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>"></div>
+        <div>
+          <%= simple_form_for [@car, @booking] do |f| %>
+            <%= f.input :date_start, label: "Select the rental dates", as: :string, required: true, input_html: {id: "range_start", class: "d-none"} %>
+            <%= f.input :date_end, label: false , as: :string, required: true, input_html: {id: "range_end", class: "d-none"} %>
+            <%= f.button :submit, input_html: {class: "car-card-button"}%>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-</div>
-
-<div>
-    <h2><%= @car.price %> €</h2>
-</div>
-
-<div>
-  <%= simple_form_for [@car, @booking] do |f| %>
-    <%= f.input :date_start, as: :string, required: false, input_html: {id: "range_start"} %>
-    <%= f.input :date_end, as: :string, required: false, input_html: {id: "range_end"} %>
-    <%= f.button :submit %>
-  <% end %>
 </div>

@@ -2,6 +2,8 @@ class Booking < ApplicationRecord
   belongs_to :customer, class_name: 'User'
   belongs_to :car
   has_one :owner, through: :car
+  validates :date_start, presence: { message: "You need to pick a rental start date" }
+  validates :date_end, presence: { message: "You need to pick a rental end date" }
 
   def total_days
     ((date_end - date_start) + 1).to_i

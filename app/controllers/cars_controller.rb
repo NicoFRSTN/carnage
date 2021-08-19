@@ -1,7 +1,15 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
-
+    if params[:query].present?
+      sql_query = "brand ILIKE :query OR model ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cars = Car.all
+    end
+    if params[:fuel].present?
+      @cars = @cars.where(fuel: params[:fuel])
+    end
     @markers = @cars.geocoded.map do |car|
       {
         lat: car.latitude,
@@ -22,6 +30,13 @@ class CarsController < ApplicationController
       image_url: helpers.asset_url('car.png')
     }]
 
+    @bookings       = @car.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.date_start,
+        to:   booking.date_end
+      }
+    end
   end
 
   def new
