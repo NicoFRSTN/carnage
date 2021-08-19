@@ -24,6 +24,13 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
+    @bookings       = @car.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.date_start,
+        to:   booking.date_end
+      }
+    end
   end
 
   def new
