@@ -27,8 +27,8 @@ user = User.create!(
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
     fuel: Car::AUTHORIZED_FUELS.sample,
-    gearbox: Faker::Vehicle.transmission,
-    price: Faker::Commerce.price,
+    gearbox: Car::AUTHORIZED_GEARBOXES.sample,
+    price: Car::Commerce.price,
     address: ADRESSES.sample,
     owner: user
   )
