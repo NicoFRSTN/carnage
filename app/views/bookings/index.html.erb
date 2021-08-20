@@ -1,65 +1,16 @@
-<%
-=begin%>
- <div class="container">
-<h1 class="text-center">My Bookings</h1>
-<div class="booking_container">
-<% @bookings.each do |booking| %>
-  <div class="card m-1" style="width: 20rem;">
-  <img src="<%= booking.car.photo_url %>" class="card-img-top" alt="...">
 
-    <div class="card-body">
-    <div class="d-flex justify-content-between">
-      <h5 class="card-title text-uppercase fw-bold"><%= booking.car.brand %></h5>
-      <h5 class="card-title text-uppercase fw-bold"><%= booking.car.model %></h5>
-      <hr>
-      <p class="card-title text-center"><%= booking.date_start %></p>
-      <p class="card-title text-center"><%= booking.date_end %></p>
-      </div>
-    </div>
-    <div>
-    <%= link_to "Check this car", booking_path(:id => booking.id), :class => "btn btn-secondary" %>
-  </div>
-  </div>
-  </div>
-<%end%>
-</div>
-</div>
-<%
-=end%>
-<%
-=begin%>
- <a href="#" class="btn btn-primary btn-sm"></a>
-<%
-=end%>
-
-<div class="container py-3">
-  <div class="title h1 text-center">My Booking</div>
+<div class="search">
   <!-- Card Start -->
   <% @bookings.each do |booking| %>
-  <div class="card">
-    <div class="row ">
-      <div class="col-md-7 px-3">
-        <div class="card-block px-6">
-          <h4 class="card-title"><%= booking.car.brand %></h4>
-          <p class="card-text">
-            <%= booking.car.model %>
-          </p>
-          <p class="card-text"><%= booking.date_start %> | <%= booking.date_end %></p>
-          <%= link_to "Check this car", booking_path(:id => booking.id), :class => "btn btn-primary btn-sm" %>
-        </div>
-      </div>
-      <!-- Image start -->
-      <div class="col-md-5">
-        <div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div>
-              <img class="photo" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
-              </div>
-            </div>
-          </div>
+  <div class="card-product">
+    <img class="photo" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+    <div class="card-product-infos">
+          <div><h4 class=""><%= booking.car.brand %></h4></div>
+          <div><p class=""><%= booking.car.model %> </p></div>
+          <div><p class=""><%= booking.date_start %> | <%= booking.date_end %></p></div>
+         <div> <%= link_to "Book Now", booking_path(:id => booking.id), :class => "btn btn-primary btn-sm " %></div>
         </div>
       </div>
       <%end%>
     </div>
-  </div>
+</div>
