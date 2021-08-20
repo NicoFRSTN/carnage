@@ -1,74 +1,77 @@
-<h1 class="text-center">Search you brand car's</h1>
-
-<div class='searchbar .mx-auto w-75'>
-  <%= simple_form_for :search, method: :get,
-                                html: { class: 'd-flex my-3 ' } do |f| %>
-    <%= f.input :query, placeholder: "Find a car...",
-                        label: false,
-                        input_html: { name: :query,
-                                      value: params.dig(:query) } %>
-
-
-    <%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
-                       selected: params.dig(:gearbox),
-                       include_blank: "- Select Gearbox -",
-                       label: false,
-                       input_html: { name: :gearbox } %>
-
-    <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
-                       selected: params.dig(:fuel),
-                       include_blank: "- Select fuel -",
-                       label: false,
-                       input_html: { name: :fuel } %>
-
-    <%= f.input :price, collection: Car::RANGE_PRICES,
-                      selected: params.dig(:price),
-                      include_blank: "- Select price -",
-                      label: false,
-                      input_html: { name: :price } %>
-
-    <%= f.input :address, collection: Car::AUTHORIZED_ADDRESS,
-                      selected: params.dig(:address),
-                      include_blank: "- Select address -",
-                      label: false,
-                      input_html: { name: :address } %>
-
-    <div class="ml-3">
-      <%= f.submit "Search", class: "btn btn-dark"  %>
-    </div>
-  <% end %>
+<div class='top-text'>
+  <h1><span>What will today's<span style='color: #E67E22; padding: 0px'>car</span>be?</span></h1>
 </div>
+<div class='row'>
+  <div class='searchbar col-3'>
+    <div class='position-fixed ml-4' style='width: 22%'>
+      <%= simple_form_for :search, method: :get,
+        html: { class: 'bg-dark rounded-lg p-3 d-flex align-middle flex-column' } do |f| %>
+        <%= f.input :query, placeholder: "Find a car...",
+                            label: false,
+                            input_html: { name: :query,
+                                          value: params.dig(:query) } %>
 
 
+        <%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
+                          selected: params.dig(:gearbox),
+                          include_blank: "- Select Gearbox -",
+                          label: false,
+                          input_html: { name: :gearbox } %>
 
-<div class="container">
-  <div class="grid-container">
-    <% @cars.each do |car| %>
+        <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
+                          selected: params.dig(:fuel),
+                          include_blank: "- Select fuel -",
+                          label: false,
+                          input_html: { name: :fuel } %>
 
-      <div class="car-card">
+        <%= f.input :price, collection: Car::RANGE_PRICES,
+                          selected: params.dig(:price),
+                          include_blank: "- Select price -",
+                          label: false,
+                          input_html: { name: :price } %>
 
-        <div class="car-card-photo">
-          <img src=<%= car.photo_url %>
-               class="card-img-top card-car-photos"
-               alt="<%= car.model %> ">
+        <%= f.input :address, collection: Car::AUTHORIZED_ADDRESS,
+                          selected: params.dig(:address),
+                          include_blank: "- Select address -",
+                          label: false,
+                          input_html: { name: :address } %>
+
+        <div class='rounded-lg'>
+          <%= f.submit "Search", class: "text-center btn btn-warning btn-block"  %>
         </div>
-
-        <div class="car-car-body">
-          <div class="car-card-brand">
-            <%= car.brand %>
-          </div>
-          <div class="car-card-model">
-            <%= car.model %>
-          </div>
-          <div class="car-card-details">
-            <div><strong>Fuel: </strong><%= car.fuel %></div><div><strong>Gearbox: </strong> <%= car.gearbox %></div>
-          </div>
-          <div class="car-card-bottom">
-            <div class="car-card-price"><%= car.price %> €/day</div>
-            <div class="car-card-button"><%= link_to "Rent me!", car_path(:id => car.id) %></div>
-          </div>
-        </div>
-      </div>
-    <%end%>
+      <% end %>
+    </div>
   </div>
+
+  <div class="container col-8">
+    <div class="grid-container">
+      <% @cars.each do |car| %>
+        <div>
+          <div class="car-car-body">
+            <img src=<%= car.photo_url %>
+                class="card-img-top card-car-photos"
+                alt="<%= car.model %> ">
+            <div class="car-card-brand">
+              <%= car.brand %>
+            </div>
+            <div class="car-card-model">
+              <%= car.model %>
+            </div>
+            <div class="car-card-details">
+              <div><strong>Fuel: </strong><%= car.fuel %></div><div><strong>Gearbox: </strong> <%= car.gearbox %></div>
+            </div>
+            <div class="car-card-bottom">
+              <div class="car-card-price"><%= car.price %> €/day</div>
+              <div class="car-card-button"><%= link_to "Rent me!", car_path(:id => car.id) %></div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+
+
+  <div class="col">
+  </div>
+
 </div>

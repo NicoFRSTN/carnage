@@ -1,13 +1,13 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
+<section class="signup">
+  <div class="container">
+<div class="signup-content">
 
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs signup-form">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
