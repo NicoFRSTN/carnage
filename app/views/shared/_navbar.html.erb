@@ -1,37 +1,40 @@
-  <div class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark navbar-lewagon">
-  <%= link_to "/cars", class: "navbar-brand" do %>
+<div class='sticky-top'>
+  <div class="navbar navbar-expand-sm navbar-dark bg-dark navbar-lewagon">
+    <%= link_to "/cars", class: "navbar-brand" do %>
 
-    <%= image_tag "https://image.flaticon.com/icons/png/512/2492/2492773.png" %> <span class="text-warning">CAR</span>NAGE
+      <%= image_tag "https://image.flaticon.com/icons/png/512/2492/2492773.png" %> <span class="text-warning">CAR</span>NAGE
 
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Browse cars", cars_path, :class => "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Lease my car", new_car_path, :class => "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My bookings", bookings_path, :class => "nav-link" %>
-        </li>
-        <li class="nav-item ">
-          <%= link_to "Logout",  destroy_user_session_path, method: :delete, :class => "nav-link" %>
-        </li>
-
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
       <% end %>
-    </ul>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Browse cars", cars_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Lease my car", new_car_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My bookings", bookings_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item ">
+            <%= link_to "Logout",  destroy_user_session_path, method: :delete, :class => "nav-link" %>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
+  <div class='bg-warning' style='height:4px'></div>
 </div>

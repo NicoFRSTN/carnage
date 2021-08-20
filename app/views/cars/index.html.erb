@@ -1,10 +1,11 @@
-<h1 class="text-center">Search you brand car's</h1>
-
+<div class='top-text'>
+  <h1><span>What will today's<span style='color: #E67E22; padding: 0px'>car</span>be?</span></h1>
+</div>
 <div class='row'>
   <div class='searchbar col-3'>
     <div class='position-fixed ml-4' style='width: 22%'>
       <%= simple_form_for :search, method: :get,
-        html: { class: 'bg-dark rounded-lg p-3 d-flex my-3 align-middle flex-column' } do |f| %>
+        html: { class: 'bg-dark rounded-lg p-3 d-flex align-middle flex-column' } do |f| %>
         <%= f.input :query, placeholder: "Find a car...",
                             label: false,
                             input_html: { name: :query,
@@ -35,8 +36,8 @@
                           label: false,
                           input_html: { name: :address } %>
 
-        <div class="ml-3">
-          <%= f.submit "Search", class: "btn btn-warning"  %>
+        <div class='rounded-lg'>
+          <%= f.submit "Search", class: "text-center btn btn-warning btn-block"  %>
         </div>
       <% end %>
     </div>
@@ -44,7 +45,7 @@
 
 
 
-  <div class="container col-7">
+  <div class="container col-8">
     <div class="grid-container">
       <% @cars.each do |car| %>
 
@@ -74,9 +75,6 @@
     </div>
   </div>
 
-  <div class="col" id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+  <div class="col">
+  </div>
 </div>
