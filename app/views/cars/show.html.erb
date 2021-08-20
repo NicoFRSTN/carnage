@@ -1,52 +1,59 @@
-<div class="car-container">
-  <div id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class='container'>
+
+  <div class="car-container">
 
 
-<!-- separation  -->
+  <!-- separation  -->
 
-  <div>
+    <div class='ml-3 p-3'>
 
-    <div>
-      <img src="<%= @car.photo_url %>" width= 600px alt="">
-    </div>
-
-    <div>
-      <%= @car.brand %> <%= @car.model %>
-    </div>
-
-    <div>
-      <%= @car.fuel %>
-    </div>
-
-
-    <div>
-      <%= @car.gearbox %>
-    </div>
-
-    <div>
-      <%= @car.address %>
-    </div>
-
-    <div>
-      <h2><%= @car.price %> € / Day</h2>
-    </div>
-
-    <div>
-
-      <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>"></div>
-        <div>
-          <%= simple_form_for [@car, @booking] do |f| %>
-            <%= f.input :date_start, label: "Select the rental dates", as: :string, required: true, input_html: {id: "range_start", class: "d-none"} %>
-            <%= f.input :date_end, label: false , as: :string, required: true, input_html: {id: "range_end", class: "d-none"} %>
-            <%= f.button :submit, input_html: {class: "car-card-button"}%>
-          <% end %>
-        </div>
+      <div>
+        <img src="<%= @car.photo_url %>" width= 600px alt="">
       </div>
 
+      <div class='ml-3 font-weight-bold pt-3'>
+        <%= @car.brand %> <%= @car.model %>
+      </div>
+
+      <div class='ml-3'>
+        <%= @car.fuel %>
+      </div>
+
+
+      <div class='ml-3'>
+        <%= @car.gearbox %>
+      </div>
+
+      <div class='ml-3'>
+        <%= @car.address %>
+      </div>
+
+      <div class='ml-3'>
+        <h2><%= @car.price %> € / Day</h2>
+      </div>
+    </div>
+      <div class='mx-auto'>
+
+        <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>"></div>
+          <div>
+            <%= simple_form_for [@car, @booking] do |f| %>
+              <%= f.input :date_start, label: "Select the rental dates", as: :string, required: true, input_html: {id: "range_start", class: "font-weight-bold d-none"} %>
+              <%= f.input :date_end, class: 'font-weight-bold', label: false , as: :string, required: true, input_html: {id: "range_end", class: "d-none"} %>
+              <%= f.button :submit, class: 'w-100 mx-auto btn btn-warning'%>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
 
+  <div class='mx-auto w-75'>
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>

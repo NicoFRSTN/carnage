@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='container col-6'>
+  <div class='container bg-dark p-3 col-6'>
     <%= simple_form_for @car do |f| %>
       <%= f.input :brand, placeholder: 'car brand', error: 'Brand is mandatory, please specify one' %>
       <%= f.input :model, placeholder: 'car model', error: 'Model is mandatory, please specify one' %>
@@ -8,12 +8,16 @@
                               include_blank: "- Select fuel -",
                               label: false,
                               error: 'Fuel is mandatory, please specify one' %>
-      <%= f.input :gearbox, placeholder: 'gearbox type', error: 'Gearbox type is mandatory, please specify one' %>
+      Gearbox<%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
+                          selected: params.dig(:gearbox),
+                          include_blank: "- Select Gearbox -",
+                          label: false,
+                          error: 'Gearbox type is mandatory, please specify one' %>
       <%= f.input :address, placeholder: 'car location', error: 'A location is mandatory, please specify one' %>
       <%= f.input :price, placeholder: 'price per day', error: 'Price is mandatory, please specify one' %>
       <%= f.input :photo_url, placeholder: 'car photo URL', error: 'A photo is mandatory, please upload one' %>
-      <div class=>
-        <%= f.button :submit, 'add car', class: 'mx-auto btn btn-warning' %>
+      <div class='mx-auto w-100'>
+        <%= f.button :submit, 'add car', class: 'w-100 mx-auto btn btn-warning' %>
       </div>
     <% end %>
   </div>
