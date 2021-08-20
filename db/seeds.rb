@@ -28,7 +28,7 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/slideshow/slides
            model: "Amg",
            fuel: "Gasoline",
            gearbox: "Automanual",
-           price: "90€-100€",
+           price: "92€",
            address: "Paris",
            owner: user)
 
@@ -37,7 +37,7 @@ Car.create(photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5
            model: "A7",
            fuel: "Diesel",
            gearbox: "Automatic",
-           price: "90€-100€",
+           price: "99€",
            address: "Lyon",
            owner: user)
 
@@ -46,7 +46,7 @@ Car.create(photo_url: "https://s1.1zoom.me/big0/651/BMW_2018_M5_V8_F90_M5_Compet
            model: "M5",
            fuel: "Electric",
            gearbox: "Automatic",
-           price: "80€-90€",
+           price: "83€",
            address: "Grenoble",
            owner: user)
 
@@ -55,7 +55,7 @@ Car.create(photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX4
            model: "Golf 7R",
            fuel: "Gasoline",
            gearbox: "Automatic",
-           price: "60€-70€",
+           price: "65",
            address: "Marseille",
            owner: user)
 
@@ -64,7 +64,7 @@ Car.create(photo_url: "https://actu-moteurs.com/wp-content/uploads/2021/03/maxre
            model: "R8",
            fuel: "Diesel",
            gearbox: "Automatic",
-           price: "50€-60€",
+           price: "75€",
            address: "Bordeaux",
            owner: user)
 
@@ -73,7 +73,7 @@ Car.create(photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxM
            model: "911",
            fuel: "Diesel",
            gearbox: "Automanual",
-           price: "40€-50€",
+           price: "45€",
            address: "Saint-Étienne",
            owner: user)
 
@@ -82,7 +82,7 @@ Car.create(photo_url: "https://cdn.motor1.com/images/mgl/WO7pq/s3/2021-jaguar-xf
            model: "XF",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "70€-80€",
+           price: "75€",
            address: "Paris",
            owner: user)
 
@@ -91,7 +91,7 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2018-06/logo_690
            model: "508",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "20€-30€",
+           price: "25€",
            address: "Nice",
            owner: user)
 
@@ -100,7 +100,7 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2020-09/0100%20B
            model: "Continental GT",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "100€",
+           price: "99€",
            address: "Nice",
            owner: user)
 
@@ -109,7 +109,7 @@ Car.create(photo_url: "https://www.automobile-magazine.fr/asset/cms/166918/confi
            model: "Zoé",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "10€-20€",
+           price: "15€",
            address: "Lyon",
            owner: user)
 
@@ -118,7 +118,7 @@ Car.create(photo_url: "https://www.auto-infos.fr/IMG/arton10832.jpg",
            model: "Cactus",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "20€-30€",
+           price: "20€",
            address: "Nice",
            owner: user)
 
@@ -127,6 +127,6 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2020-04/1_essai_
            model: "Corsa",
            fuel: "Gasoline",
            gearbox: "Manual",
-           price: "10€-20€",
+           price: "10€",
            address: "Paris",
            owner: user)
