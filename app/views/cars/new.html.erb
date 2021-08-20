@@ -1,9 +1,20 @@
-<%= simple_form_for @car do |f| %>
-  <%= f.input :brand, placeholder: 'car brand', error: 'Brand is mandatory, please specify one' %>
-  <%= f.input :model, placeholder: 'car model', error: 'Model is mandatory, please specify one' %>
-  <%= f.input :fuel, placeholder: 'fuel type', error: 'Fuel is mandatory, please specify one' %>
-  <%= f.input :gearbox, placeholder: 'gearbox type', error: 'Gearbox type is mandatory, please specify one' %>
-  <%= f.input :price, placeholder: 'price per day', error: 'Price is mandatory, please specify one' %>
-  <%= f.input :photo_url, placeholder: 'car photo', error: 'A photo is mandatory, please upload one' %>
-  <%= f.button :submit %>
-<% end %>
+<div class='row'>
+  <div class='container col-6'>
+    <%= simple_form_for @car do |f| %>
+      <%= f.input :brand, placeholder: 'car brand', error: 'Brand is mandatory, please specify one' %>
+      <%= f.input :model, placeholder: 'car model', error: 'Model is mandatory, please specify one' %>
+      Fuel<%=f.input :fuel, collection: Car::AUTHORIZED_FUELS,
+                              selected: params.dig(:fuel),
+                              include_blank: "- Select fuel -",
+                              label: false,
+                              error: 'Fuel is mandatory, please specify one' %>
+      <%= f.input :gearbox, placeholder: 'gearbox type', error: 'Gearbox type is mandatory, please specify one' %>
+      <%= f.input :address, placeholder: 'car location', error: 'A location is mandatory, please specify one' %>
+      <%= f.input :price, placeholder: 'price per day', error: 'Price is mandatory, please specify one' %>
+      <%= f.input :photo_url, placeholder: 'car photo URL', error: 'A photo is mandatory, please upload one' %>
+      <div class=>
+        <%= f.button :submit, 'add car', class: 'mx-auto btn btn-warning' %>
+      </div>
+    <% end %>
+  </div>
+</div>

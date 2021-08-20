@@ -6,7 +6,7 @@
   justify-content: space-evenly;
 }
 
-.dollar {
+.dollar p {
 font-size: 30px;
 font-weight: 500;
 text-transform: uppercase;
@@ -16,14 +16,14 @@ margin-bottom: 10px;
 
 }
 
-.brand {
+.brand p {
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     color: gray;
 }
 
-.model {
+.model p {
 font-size: 30px;
 font-weight: 500;
 text-transform: uppercase;
@@ -45,6 +45,7 @@ margin-bottom: 10px;
     height: 32px;
     min-height: 32px;
     border-radius: 10px;
+    margin-top: 20px;
 
 }
 
@@ -98,6 +99,14 @@ margin-bottom: 10px;
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
+// .title-white {
+//   color: white;
+// }
+
+// .title-black {
+//   color: black;
+// }
+
 .booking-button {
   display: flex;
   flex-direction: flex-end;
@@ -105,6 +114,7 @@ margin-bottom: 10px;
 
 @media all and (max-width: 500px) {
   .list {
+    /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
   }
 }
