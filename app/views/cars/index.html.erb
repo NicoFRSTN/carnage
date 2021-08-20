@@ -46,14 +46,16 @@
   <div class="container col-8">
     <div class="grid-container">
       <% @cars.each do |car| %>
-        <div>
-          <div class="car-card">
-            <div class="card-body">
+        <div class="car-card">
+
+          <div class="car-card-photo">
             <img src=<%= car.photo_url %>
                 class="card-img-top card-car-photos"
                 alt="<%= car.model %> ">
             </div>
+          </div>
 
+          <div class="card-body">
             <div class="car-card-brand">
               <%= car.brand %>
             </div>
