@@ -1,42 +1,41 @@
 
-body {
-  background-color:  #eee;
-}
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.contenu-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+.dollar {
+font-size: 30px;
+font-weight: 500;
+text-transform: uppercase;
+color: #363636;
+text-decoration: none;
+margin-bottom: 10px;
+
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.brand {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: gray;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+.model {
+font-size: 30px;
+font-weight: 500;
+text-transform: uppercase;
+color: #363636;
+text-decoration: none;
+margin-bottom: 10px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
 
-.btn {
+
+
+.book {
     margin-right: 0;
     margin-left: 0;
     left: 0;
@@ -45,5 +44,67 @@ body {
     max-width: 170px;
     height: 32px;
     min-height: 32px;
-    padding: 0 18px;
+    border-radius: 10px;
+
+}
+
+.list {
+  z-index: 0;
+  width: 100%;
+
+}
+
+.contenu {
+  display: flex;
+  margin: 30px auto;
+  width: 1024px;
+  height: 150px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contenu .contenu_image {
+  width: 300px;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.contenu .contenu_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.contenu .contenu_title {
+
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  // font-size: 30px;
+  height: 40px;
+  color: black;
+  gap: 1rem;
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+
+.contenu:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.booking-button {
+  display: flex;
+  flex-direction: flex-end;
+}
+
+@media all and (max-width: 500px) {
+  .list {
+    flex-direction: column;
+  }
 }
