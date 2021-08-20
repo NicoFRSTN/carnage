@@ -1,16 +1,18 @@
 
-<div class="search">
-  <!-- Card Start -->
+<div class="list">
   <% @bookings.each do |booking| %>
-  <div class="card-product">
-    <img class="photo" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
-    <div class="card-product-infos">
-          <div><h4 class=""><%= booking.car.brand %></h4></div>
-          <div><p class=""><%= booking.car.model %> </p></div>
-          <div><p class=""><%= booking.date_start %> | <%= booking.date_end %></p></div>
-         <div> <%= link_to "Book Now", booking_path(:id => booking.id), :class => "btn btn-primary btn-sm " %></div>
+    <div class="contenu">
+      <div class="contenu_image">
+        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=963&q=80" />
+      </div>
+      <div class="contenu_title contenu-container">
+        <div class="brand"><p><%= booking.car.brand %></p></div>
+        <div class="model"><p><%= booking.car.model %></p></div>
+        <div class="dollar"><p><%= booking.car.price() %>$</p></div>
+        <div class="booking-button">
+          <%= link_to "Book Now", booking_path(:id => booking.id), :class => "btn btn-primary btn-sm book" %>
         </div>
       </div>
-      <%end%>
     </div>
+  <%end%>
 </div>

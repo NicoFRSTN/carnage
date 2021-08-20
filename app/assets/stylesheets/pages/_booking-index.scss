@@ -1,38 +1,41 @@
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+.contenu-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+.dollar p {
+font-size: 30px;
+font-weight: 500;
+text-transform: uppercase;
+color: #363636;
+text-decoration: none;
+margin-bottom: 10px;
+
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.brand p {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: gray;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+.model p {
+font-size: 30px;
+font-weight: 500;
+text-transform: uppercase;
+color: #363636;
+text-decoration: none;
+margin-bottom: 10px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
 
-.btn {
+
+
+.book {
     margin-right: 0;
     margin-left: 0;
     left: 0;
@@ -41,43 +44,77 @@
     max-width: 170px;
     height: 32px;
     min-height: 32px;
-    padding: 0 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+
 }
 
-// .title {
+.list {
+  z-index: 0;
+  width: 100%;
 
-//     margin-bottom: 50px;
-//     text-transform: uppercase;
+}
+
+.contenu {
+  display: flex;
+  margin: 30px auto;
+  width: 1024px;
+  height: 150px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contenu .contenu_image {
+  width: 300px;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.contenu .contenu_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.contenu .contenu_title {
+
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  // font-size: 30px;
+  height: 40px;
+  color: black;
+  gap: 1rem;
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+
+.contenu:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+// .title-white {
+//   color: white;
 // }
 
-// .card-block {
-//     font-size: 1em;
-//     position: relative;
-//     margin: 0;
-//     padding: 1em;
-//     border: none;
-//     border-top: 1px solid rgba(34, 36, 38, .1);
-//     box-shadow: none;
-
-// }
-// .card {
-//     font-size: 1em;
-//     overflow: hidden;
-//     padding: 5;
-//     border: none;
-//     border-radius: .28571429rem;
-//     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-//     margin-top:20px;
-//     height: 10rem;
+// .title-black {
+//   color: black;
 // }
 
+.booking-button {
+  display: flex;
+  flex-direction: flex-end;
+}
 
-// .btn {
-//   margin-top: auto;
-// }
-
-// .photo {
-//   object-fit: cover;
-//   width: 100%;
-//   object-position: 100%;
-// }
+@media all and (max-width: 500px) {
+  .list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
