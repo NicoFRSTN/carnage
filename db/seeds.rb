@@ -11,6 +11,13 @@ require 'faker'
 Car.destroy_all
 User.destroy_all
 
+
+ADRESSES = [
+  '20 rue des capucins,  Lyon',
+  '48 rue de la madeleine, Lyon',
+  '10 rue des capucins,  Lyon',
+  '38 rue de la madeleine, Lyon'
+]
 user = User.create!(
   email: "admin@hotmail.com",
   password: "adminadmin"
