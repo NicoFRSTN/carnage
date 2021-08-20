@@ -8,9 +8,9 @@
       <div class="contenu_title contenu-container">
         <div class="brand"><p><%= booking.car.brand %></p></div>
         <div class="model"><p><%= booking.car.model %></p></div>
-        <div class="dollar"><p><%= booking.car.price() %>$</p></div>
+        <div class="dollar"><p><%= booking.car.price() %>€</p></div>
         <div class="booking-button">
-          <%= link_to "Book Now", booking_path(:id => booking.id), :class => "btn btn-primary btn-sm book" %>
+          <%= link_to "Book Now", booking_path(:id => booking.id), :class => "btn btn-warning book" %>
         </div>
       </div>
     </div>
