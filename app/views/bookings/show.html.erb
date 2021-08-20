@@ -1,14 +1,14 @@
 
 <div class="container">
-  <div class="card m-1" style="width: 20rem;">
+  <div class="card m-1 mx-auto" style="width: 30rem;">
 
     <img src="<%= @booking.car.photo_url %>" class="card-img-top" alt="...">
 
-    <div class="card-body">
+    <div class="card-body bg-dark text-white">
 
       <div class="d-flex justify-content-between">
-        <h5 class="card-title text-uppercase fw-bold"><%= @booking.car.brand %></h5>
-        <h5 class="card-title text-uppercase fw-bold"><%= @booking.car.model %></h5>
+        <h5 class="card-title text-uppercase font-weight-bold"><%= @booking.car.brand %></h5>
+        <h5 class="card-title text-uppercase font-weight-bold"><%= @booking.car.model %></h5>
       </div>
 
       <div>
@@ -19,9 +19,10 @@
           <p class="text-center">Total price:   <%= @booking.total_price() %>€</p>
       </div>
 
-      <div>
-          <%= link_to "Go back to my bookings", bookings_path, :class => "btn btn-secondary" %>
-          <%= link_to "Cancel this booking", booking_path(@booking), method: :delete, :class => "btn btn-secondary", data: { confirm: "Are you sure you want to cancel this booking?"}, class: 'btn btn-secondary'  %>
+
+      <div class='mx-auto w-100'>
+          <%= link_to "Go back to my bookings", bookings_path, :class => "w-100 mx-auto mb-3 btn btn-warning" %>
+          <%= link_to "Cancel this booking", booking_path(@booking), method: :delete, :class => "mx-auto btn btn-warning", data: { confirm: "Are you sure you want to cancel this booking?"}, class: 'w-100 btn btn-warning'  %>
       </div>
 
     </div>
