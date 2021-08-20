@@ -1,23 +1,45 @@
 <h1 class="text-center">Search you brand car's</h1>
 
-<div class="container">
-
+<div class='searchbar .mx-auto w-75'>
   <%= simple_form_for :search, method: :get,
-                                html: { class: 'd-flex my-3' } do |f| %>
+                                html: { class: 'd-flex my-3 ' } do |f| %>
     <%= f.input :query, placeholder: "Find a car...",
                         label: false,
                         input_html: { name: :query,
                                       value: params.dig(:query) } %>
+
+
+    <%= f.input :gearbox, collection: Car::AUTHORIZED_GEARBOXES,
+                       selected: params.dig(:gearbox),
+                       include_blank: "- Select Gearbox -",
+                       label: false,
+                       input_html: { name: :gearbox } %>
+
     <%= f.input :fuel, collection: Car::AUTHORIZED_FUELS,
                        selected: params.dig(:fuel),
-                       include_blank: true,
+                       include_blank: "- Select fuel -",
                        label: false,
                        input_html: { name: :fuel } %>
+
+    <%= f.input :price, collection: Car::RANGE_PRICES,
+                      selected: params.dig(:price),
+                      include_blank: "- Select price -",
+                      label: false,
+                      input_html: { name: :price } %>
+
+    <%= f.input :address, collection: Car::AUTHORIZED_ADDRESS,
+                      selected: params.dig(:address),
+                      include_blank: "- Select address -",
+                      label: false,
+                      input_html: { name: :address } %>
+
     <div class="ml-3">
-      <%= f.submit "Search", class: "btn btn-primary"  %>
+      <%= f.submit "Search", class: "btn btn-dark"  %>
     </div>
   <% end %>
 </div>
+
+
 
 <div class="container">
   <div class="grid-container">
@@ -48,8 +70,3 @@
     <%end%>
   </div>
 </div>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
