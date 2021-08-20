@@ -28,7 +28,7 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/slideshow/slides
            model: "Amg",
            fuel: "Gasoline",
            gearbox: "Automanual",
-           price: "92,99€",
+           price: "92.99€",
            address: "Paris",
            owner: user)
 
@@ -37,7 +37,7 @@ Car.create(photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5
            model: "A7",
            fuel: "Diesel",
            gearbox: "Automatic",
-           price: "86,99€",
+           price: "86.99€",
            address: "Lyon",
            owner: user)
 
@@ -46,7 +46,7 @@ Car.create(photo_url: "https://s1.1zoom.me/big0/651/BMW_2018_M5_V8_F90_M5_Compet
            model: "M5",
            fuel: "Electric",
            gearbox: "Automatic",
-           price: "79,99€",
+           price: "79.99€",
            address: "Grenoble",
            owner: user)
 
@@ -64,7 +64,7 @@ Car.create(photo_url: "https://actu-moteurs.com/wp-content/uploads/2021/03/maxre
            model: "R8",
            fuel: "Diesel",
            gearbox: "Automatic",
-           price: "49,99€",
+           price: "49.99€",
            address: "Bordeaux",
            owner: user)
 
@@ -73,7 +73,7 @@ Car.create(photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxM
            model: "911",
            fuel: "Diesel",
            gearbox: "Automanual",
-           price: "39,99€",
+           price: "39.99€",
            address: "Saint-Étienne",
            owner: user)
 
@@ -82,7 +82,7 @@ Car.create(photo_url: "https://cdn.motor1.com/images/mgl/WO7pq/s3/2021-jaguar-xf
            model: "XF",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "59,99€",
+           price: "59.99€",
            address: "Paris",
            owner: user)
 
@@ -91,8 +91,8 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2018-06/logo_690
            model: "508",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "19,99€",
-           address: "Nice",
+           price: "19.99€",
+           address: "Lyon",
            owner: user)
 
 Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2020-09/0100%20Bentley%20Continental%20GT%20Mulliner.jpg",
@@ -100,7 +100,7 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2020-09/0100%20B
            model: "Continental GT",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "99,99€",
+           price: "99.99€",
            address: "Nice",
            owner: user)
 
@@ -109,7 +109,7 @@ Car.create(photo_url: "https://www.automobile-magazine.fr/asset/cms/166918/confi
            model: "Zoé",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "9,99€",
+           price: "9.99€",
            address: "Lyon",
            owner: user)
 
@@ -118,7 +118,7 @@ Car.create(photo_url: "https://www.auto-infos.fr/IMG/arton10832.jpg",
            model: "Cactus",
            fuel: "Diesel",
            gearbox: "Manual",
-           price: "22,99€",
+           price: "22.99€",
            address: "Nice",
            owner: user)
 
@@ -127,6 +127,33 @@ Car.create(photo_url: "https://www.turbo.fr/sites/default/files/2020-04/1_essai_
            model: "Corsa",
            fuel: "Gasoline",
            gearbox: "Manual",
-           price: "12,99€",
+           price: "12.99€",
            address: "Paris",
+           owner: user)
+
+Car.create(photo_url: "https://public.carjager.com/content/2021/06/29111734/Renault-Fuego-Turbo-D-01.jpeg",
+           brand: "Renault",
+           model: "fuego",
+           fuel: "Gasoline",
+           gearbox: "Manual",
+           price: "6.99€",
+           address: "Lyon",
+           owner: user)
+
+Car.create(photo_url: "https://img4.autodeclics.com/photo_article/92353/30729/1200-L-essai-suzuki-swift-hybridation-maximise-pour-citadine-surquipe.jpg",
+           brand: "Suzuki",
+           model: "swift",
+           fuel: "Diesel",
+           gearbox: "Manual",
+           price: "8.99€",
+           address: "Lyon",
+           owner: user)
+
+Car.create(photo_url: "https://s3.eu-west-2.amazonaws.com/archives-photos.alcopa-auction.fr/photos/BR/BR762ZT/stampedCropped/0_BR762ZT.jpg",
+           brand: "Chevrolet",
+           model: "spark",
+           fuel: "Diesel",
+           gearbox: "Manual",
+           price: "7.99€",
+           address: "Lyon",
            owner: user)
