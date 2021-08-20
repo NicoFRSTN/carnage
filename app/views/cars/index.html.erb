@@ -43,8 +43,6 @@
     </div>
   </div>
 
-
-
   <div class="container col-8">
     <div class="grid-container">
       <% @cars.each do |car| %>
@@ -52,15 +50,17 @@
         <div class="car-card">
 
           <div class="car-card-photo">
-            <img src=<%= car.photo_url %> class="card-img-top" alt="...">
+            <img src="<%= car.photo_url %>" class="card-img-top card-car-photos" alt="...">
           </div>
 
           <div class="car-car-body">
-            <div class="car-card-brand">
-              <%= car.brand %>
-            </div>
-            <div class="car-card-model">
-              <%= car.model %>
+            <div class="d-flex justify-content-between mb-4">
+              <div class="car-card-brand">
+                <%= car.brand %>
+              </div>
+              <div class="car-card-model">
+                <%= car.model %>
+              </div>
             </div>
             <div class="car-card-details">
               <div><strong>Fuel: </strong><%= car.fuel %></div><div><strong>Gearbox: </strong> <%= car.gearbox %></div>
@@ -78,5 +78,5 @@
 
   <div class="col">
   </div>
-  
+
 </div>
